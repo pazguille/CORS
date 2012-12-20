@@ -20,7 +20,7 @@ See: [https://github.com/component/component](https://github.com/component/compo
 ## How-to
 ```js
 cors.get({
-	'url': 'https://api.mercadolibre.com/sites/MLA/search?query=ps3',
+	'url': 'http://api.site.com/search?query=ps3',
 	'credentials': true,
 	'success': function (data) {
 		// Code here!
@@ -32,7 +32,7 @@ cors.get({
 
 // or
 
-cors.get('https://api.mercadolibre.com/sites/MLA/search?query=ps3', function (data) {
+cors.get('http://api.site.com/search?query=ps3', function (data) {
 	// Code here!
 });
 ```
