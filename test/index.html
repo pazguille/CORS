@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>CORS Component</title>
-	</head>
-	<body>
-		<div id="content"></div>
-		<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-		<script src="../build/build.js"></script>
-		<script>
-			var cors = require('cors');
+    <head>
+        <meta charset="utf-8" />
+        <title>CORS Component</title>
+    </head>
+    <body>
+        <div id="content"></div>
+        <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+        <script src="../build/build.js"></script>
+        <script>
+            var cors = require('cors');
 
-			//Modern browsers and mobile
+            //Modern browsers and mobile
 
-			// cors.get({
-			// 	'url': 'https://api.mercadolibre.com/sites/MLA/search?query=ps3',
-			// 	'params': {
-			// 		'bar': 'foo'
-			// 	},
-			// 	'sucess': function (data) {
-			// 		document.getElementById('content').innerHTML = data;
-			// 	}
+            // cors.get({
+            //  'url': 'https://api.mercadolibre.com/sites/MLA/search?query=ps3',
+            //  'params': {
+            //      'bar': 'foo'
+            //  },
+            //  'sucess': function (data) {
+            //      document.getElementById('content').innerHTML = data;
+            //  }
 
-			// });
+            // });
 
-			cors.get('https://api.mercadolibre.com/sites/MLA/search?query=ps3', function (data) {
-			 	document.getElementById('content').innerHTML = data;
-			});
+            cors.get('https://api.mercadolibre.com/sites/MLA/search?query=ps3', function (data) {
+                document.getElementById('content').innerHTML = data;
+            });
 
-			// cors.get('https://api.mercadolibre.com/sites/MLA/search?query=ps3', {
-			// 	'pepe': 'foo'
-			// }, function (data) {
-			//  	document.getElementById('content').innerHTML = data;
-			// });
+            // cors.get('https://api.mercadolibre.com/sites/MLA/search?query=ps3', {
+            //  'pepe': 'foo'
+            // }, function (data) {
+            //      document.getElementById('content').innerHTML = data;
+            // });
 
-			// Test for IE7++
-			// cors.get('http://gdata.youtube.com/feeds/api/standardfeeds/most_popular?v=2&time=today&alt=json&format=5', function (data) {
-			// 	document.getElementById('content').innerHTML = data;
-			// });
-		</script>
-	</body>
+            // Test for IE7++
+            // cors.get('http://gdata.youtube.com/feeds/api/standardfeeds/most_popular?v=2&time=today&alt=json&format=5', function (data) {
+            //  document.getElementById('content').innerHTML = data;
+            // });
+        </script>
+    </body>
 </html>
