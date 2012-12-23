@@ -1,8 +1,8 @@
 {
   "name": "cors",
   "repo": "pazguille/CORS",
-  "description": "Simple and tiny CORS Component",
-  "version": "0.0.1",
+  "description": "Simple and tiny CORS component",
+  "version": "0.1",
   "author": "Guille Paz <guille87paz@gmail.com>",
   "twitter": "@pazguille",
   "keywords": [

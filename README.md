@@ -37,7 +37,7 @@ cors.get({
 ### cors#head(options)
 ### cors#put(options)
 ### cors#delete(options)
-(All the methods return the `XMLHttpRequest` or `XDomainRequest` object.)
+(All these methods return the `XMLHttpRequest` or `XDomainRequest` object).
 
 ### Options
 - url: A string containing the URL to which the request is sent.
@@ -53,11 +53,12 @@ cors.get('http://api.site.com/search?query=ps3', function (data) {
 	// Code here!
 });
 ```
-### cors#get(url, success)
-### cors#post(url, success)
-### cors#head(url, success)
-### cors#put(url, success)
-### cors#delete(url, success)
+You can use this sintaxy with the following methods:
+- cors#get(url, success)
+- cors#post(url, success)
+- cors#head(url, success)
+- cors#put(url, success)
+- cors#delete(url, success)
 
 ## About CORS
 - [http://www.w3.org/TR/cors/](http://www.w3.org/TR/cors/)
