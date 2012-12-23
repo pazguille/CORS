@@ -53,7 +53,7 @@ cors.get('http://api.site.com/search?query=ps3', function (data) {
 	// Code here!
 });
 ```
-You can use this sintaxy with the following methods:
+You can use this syntax with the following methods:
 - cors#get(url, success)
 - cors#post(url, success)
 - cors#head(url, success)
