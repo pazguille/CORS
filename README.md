@@ -29,19 +29,43 @@ cors.get({
 		// Code here!
 	}
 });
+```
 
-// or
+## API
+### cors#get(options)
+### cors#post(options)
+### cors#head(options)
+### cors#put(options)
+### cors#delete(options)
+(All the methods return the `XMLHttpRequest` or `XDomainRequest` object.)
 
+### Options
+- url: A string containing the URL to which the request is sent.
+- params: A map of key-value pairs to set data which will be send.
+- success: A function to be called if the request succeeds.
+- error: A function to be called if the request fails.
+- credentials: Standard CORS requests don't send or set cookies by default. In order to include cookies as part of the request, you need to set the `withCredentials` property to `true`.
+- headers: A map of key-value pairs which contains headers that are included in the request.
+
+### Using the shorthand alternative
+```js
 cors.get('http://api.site.com/search?query=ps3', function (data) {
 	// Code here!
 });
 ```
+### cors#get(url, success)
+### cors#post(url, success)
+### cors#head(url, success)
+### cors#put(url, success)
+### cors#delete(url, success)
 
-## API
-- WIP
+## About CORS
+- [http://www.w3.org/TR/cors/](http://www.w3.org/TR/cors/)
+- [https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS?redirectlocale=en-US&redirectslug=HTTP_access_control](https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS?redirectlocale=en-US&redirectslug=HTTP_access_control)
+- [http://www.html5rocks.com/en/tutorials/cors/](http://www.html5rocks.com/en/tutorials/cors/)
 
-### Events
-- WIP
+### XDomainRequest - Restrictions and Limitations
+- [http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx)
 
 ## Contact
 - Guille Paz (Frontend developer - JavaScript developer | Web standards lover)

@@ -43,6 +43,7 @@ Request.prototype.init = function (options) {
     that.success = options.success;
     that.error = options.error;
     that.params = toQueryString(options.params);
+    that.headers = options.headers;
 
     if (options.credentials === true) {
         that.xhr.withCredentials = true;
@@ -51,7 +52,7 @@ Request.prototype.init = function (options) {
     that.send();
 
     return that;
-}
+};
 
 Request.prototype.send = function () {
     var that = this;
@@ -72,19 +73,37 @@ Request.prototype.send = function () {
 
     that.xhr.open(that.method, that.url, true);
 
+    if (that.headers !== undefined) {
+        that.setHeaders();
+    }
+
     // Send
     that.xhr.send(that.params);
 
     return that;
-}
+};
+
+Request.prototype.setHeaders = function () {
+    var that = this,
+        headers = that.headers,
+        key;
+
+    for (key in headers) {
+        if (headers.hasOwnProperty(key)) {
+            that.xhr.setRequestHeader(key, headers[key]);
+        }
+    }
+
+    return that;
+};
 
 /**
- * Methods
+ * Public Methods
  */
 for (i; i < methodsLength; i += 1) {
     (function () {
         var method = methods[i];
-        cors[method] = function (url, params, success, error) {
+        cors[method] = function (url, success) {
             var options = {};
 
             if (url === undefined) {
@@ -95,16 +114,11 @@ for (i; i < methodsLength; i += 1) {
                 options = url;
 
             } else {
-                if (typeof params === 'function') {
-                    error = success;
-                    success = params;
-                    params = undefined;
+                if (typeof success === 'function') {
+                    options.success = success;
                 }
 
                 options.url = url;
-                options.params = params;
-                options.success = success;
-                options.error = error;
             }
 
             options.method = method.toUpperCase();
