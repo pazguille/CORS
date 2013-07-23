@@ -42,11 +42,15 @@ Request.prototype.init = function (options) {
     that.url = options.url;
     that.success = options.success;
     that.error = options.error;
-    that.params = toQueryString(options.params);
+    that.params = options.params;
     that.headers = options.headers;
 
     if (options.credentials === true) {
         that.xhr.withCredentials = true;
+    }
+
+    if (typeof options.params === "object") {
+        that.params = toQueryString(options.params);
     }
 
     that.send();
